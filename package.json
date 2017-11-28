@@ -15,8 +15,16 @@
   "engines": {
     "node": ">=4"
   },
+  "size-limit": [
+    {
+      "limit": "150 KB",
+      "path": "index.js"
+    }
+  ],
   "scripts": {
+    "size": "size-limit",
     "test": "standard && ava",
+    "testci": "standard && ava && npm run size",
     "prepublish": "npm run check-deps",
     "check-deps": "nsp check"
   },
@@ -52,6 +60,7 @@
     "nsp": "^2.6.3",
     "pify": "^3.0.0",
     "sinon": "^2.3.8",
+    "size-limit": "^0.13.2",
     "standard": "^9.0.1"
   }
 }
